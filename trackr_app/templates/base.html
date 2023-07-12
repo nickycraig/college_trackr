@@ -24,9 +24,9 @@
             </div>
             <div id="navbarBasicExample" class="navbar-menu">
               <div class="navbar-start">
-                <a class="navbar-item">Home</a>
+                <a class="navbar-item" href="/">Home</a>
                 <div class="navbar-item has-dropdown is-hoverable">
-                  <a class="navbar-link">Regions</a> 
+                  <a class="navbar-link" href="/region-state">Regions</a> 
                   <div class="navbar-dropdown">
                     <a class="navbar-item">
                       Northeast
@@ -53,5 +53,9 @@
               </div>
             </div>
         </nav>
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
     </body>
 </html>
