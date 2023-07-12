@@ -4,33 +4,50 @@
 <h1 class="title">Regions</h1>
 
 <div class="region-container">
-   
-    <a href="">
-        <div class="region-name">
-            <h1>Northeast</h1>
-        </div>
-    </a>
-    <a href="">
-        <div class="region-name">
-            <h1>Southeast</h1>
-        </div>
-    </a>
-    <a href="">
-        <div class="region-name">
-            <h1>Midwest</h1>
-        </div>
-    </a>
-    <a href="">
-        <div class="region-name">
-            <h1>Southwest</h1>
-        </div>
-    </a>
-    <a href="">
-        <div class="region-name">
-            <h1>West</h1>
-        </div>
-    </a>
-    
+    <h1 class="title">Northeast</h1>
+    {% for state in states %}
+        {% if state.region == "Northeast" %}
+            <a href=""><ul>{{state.name}}</ul></a>
+        {% endif %}
+    {% endfor %}
 </div>
-
+<br>
+<div class="region-container">
+    <h1 class="title">Southeast</h1>
+    {% for state in states %}
+        {% if state.region == "Southeast" %}
+            <a href=""><ul>{{state.name}}</ul></a>
+        {% endif %}
+    {% endfor %}
+</div>
+<br>
+<div class="region-container">
+    <h1 class="title">Midwest</h1>
+    {% for state in states %}
+        {% if state.region == "Midwest" %}
+            <a href=""><ul>{{state.name}}</ul></a>
+        {% endif %}
+    {% endfor %}
+</div>
+<br>
+<div class="region-container">
+    <h1 class="title">Southwest</h1>
+    {% for state in states %}
+        {% if state.region == "Southwest" %}
+            <a href=""><ul>{{state.name}}</ul></a>
+        {% endif %}
+    {% endfor %}
+</div>
+<br>
+<div class="region-container">
+    <h1 class="title">West</h1>
+    {% for state in states %}
+        {% if state.region == "West" %}
+            <a href=""><ul>{{state.name}}</ul></a>
+        {% endif %}
+    {% endfor %}
+</div>
+<div class="region-container">
+    
+    
 {% endblock %}
