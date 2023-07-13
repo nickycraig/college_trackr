@@ -37,3 +37,10 @@ class SchoolCreate(View):
         state = State.objects.get(pk=pk)
         School.objects.create(name=name, city=city, size=size, public_private=public_private, research_class=research_class, img=img, notes=notes, state=state)
         return redirect('region_state_detail', pk=pk)
+    
+class SchoolDetail(DetailView):
+    model = School
+    template_name = "school_detail.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
