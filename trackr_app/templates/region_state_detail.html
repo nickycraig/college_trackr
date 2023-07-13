@@ -2,32 +2,128 @@
 {% block content %}
 <div class="detail__region">
     <h1 class="title">{{state.name}}</h1>
+
+    <div class="container">
+        <div class="columns is-justify-content-center">
+          <div class="column is-6-tablet is-5-desktop is-4-widescreen is-3-fullh">
+            <form method="post" action="{% url 'school_create' state.pk %}" class="box p-5">
+              {% csrf_token %}
+              <label class="is-block mb-4">
+                <span class="is-block mb-2">School name</span>
+                <input
+                  name="name"
+                  type="text"
+                  class="input"
+                  placeholder="University of Puget Sound"
+                  required
+                />
+              </label>
+      
+              <label class="is-block mb-4">
+                <span class="is-block mb-2">City</span>
+                <input
+                  name="city"
+                  type="text"
+                  class="input"
+                  placeholder="Tacoma"
+                  required
+                />
+              </label>
+
+              <label class="is-block mb-4">
+                <span class="is-block mb-2">Student body size</span>
+                <input
+                  name="size"
+                  type="number"
+                  class="input"
+                  placeholder="2400"
+                  min="1"
+                  required
+                />
+              </label>
+      
+              <label class="is-block mb-4">
+                <span class="is-block mb-2">Public or private institution</span>
+                <span class="select is-fullwidth">
+                  <select name="public_private">
+                    <option>public</option>
+                    <option>private</option>
+                  </select>
+                </span>
+              </label>
+
+              <label class="is-block mb-4">
+                <span class="is-block mb-2">Research classification</span>
+                <span class="select is-fullwidth">
+                  <select name="research_class">
+                    <option>R1</option>
+                    <option>R2</option>
+                    <option>NA</option>
+                  </select>
+                </span>
+              </label>
+      
+              <label class="is-block mb-4">
+                <span class="is-block mb-2">School photo</span>
+                <input
+                  name="img"
+                  type="text"
+                  class="input"
+                  placeholder="paste image url here"
+                  required
+                />
+              </label>
+      
+              <label class="is-block mb-4">
+                <span class="is-block mb-2">Additional notes</span>
+                <textarea
+                  name="notes"
+                  class="textarea"
+                  rows="3"
+                  placeholder="UPS is a small liberal arts colleg in the Pacific Northwest."
+                ></textarea>
+              </label>
+      
+              <div class="mb-4">
+                <button type="submit" class="button is-link px-4">Add School</button>
+              </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+
     <div class="state-school">
-
+        <div class="school-size">
         <h1>Small:</h1>
-        {% for school in state.schools.all %}
-            {% if school.size < 5000 %}
-            <a href=""><ul>{{school.name}}</ul></a>
-            {% endif %}
-        {% endfor %}
+            {% for school in state.schools.all %}
+                {% if school.size < 5000 %}
+                <a href=""><ul>{{school.name}}</ul></a>
+                {% endif %}
+            {% endfor %}
+        </div>
         <br>
 
+        <div class="school-size">
         <h1>Medium:</h1>
-        {% for school in state.schools.all %}
-            {% if school.size >= 5000 and school.size < 15000 %}
-            <a href=""><ul>{{school.name}}</ul></a>
-            {% endif %}
-        {% endfor %}
+            {% for school in state.schools.all %}
+                {% if school.size >= 5000 and school.size < 15000 %}
+                <a href=""><ul>{{school.name}}</ul></a>
+                {% endif %}
+            {% endfor %}
+        </div>
         <br>
 
-        <h1>Large:</h1>
-        {% for school in state.schools.all %}
-            {% if school.size >= 15000 %}
-            <a href=""><ul>{{school.name}}</ul></a>
-            {% endif %}
-        {% endfor %}
+        <div class="school-size">
+            <h1>Large:</h1>
+            {% for school in state.schools.all %}
+                {% if school.size >= 15000 %}
+                <a href=""><ul>{{school.name}}</ul></a>
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
-    
 </div>
 
 {% endblock %}

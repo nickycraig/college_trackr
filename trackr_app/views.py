@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.views import View
-from .models import State
+from .models import State, School
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from django.views.generic import DetailView
@@ -24,4 +25,15 @@ class RegionStateDetail(DetailView):
         context = super().get_context_data(**kwargs)
         return context
 
-
+class SchoolCreate(View):
+    def post(self, request, pk):
+        name = request.POST.get("name")
+        city = request.POST.get("city")
+        size = request.POST.get("size")
+        public_private = request.POST.get("public_private")
+        research_class = request.POST.get("research_class")
+        img = request.POST.get("img")
+        notes = request.POST.get("notes")
+        state = State.objects.get(pk=pk)
+        School.objects.create(name=name, city=city, size=size, public_private=public_private, research_class=research_class, img=img, notes=notes, state=state)
+        return redirect('region_state_detail', pk=pk)
