@@ -20,3 +20,8 @@ class RegionStateList(TemplateView):
 class RegionStateDetail(DetailView):
     model = State
     template_name = "region_state_detail.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+

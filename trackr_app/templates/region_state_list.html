@@ -7,7 +7,7 @@
     <h1 class="title">Northeast</h1>
     {% for state in states %}
         {% if state.region == "Northeast" %}
-            <a href=""><ul>{{state.name}}</ul></a>
+            <a href="{% url 'region_state_detail' state.pk %}"><ul>{{state.name}}</ul></a>
         {% endif %}
     {% endfor %}
 </div>
@@ -16,7 +16,7 @@
     <h1 class="title">Southeast</h1>
     {% for state in states %}
         {% if state.region == "Southeast" %}
-            <a href=""><ul>{{state.name}}</ul></a>
+            <a href="{% url 'region_state_detail' state.pk %}"><ul>{{state.name}}</ul></a>
         {% endif %}
     {% endfor %}
 </div>
@@ -25,7 +25,7 @@
     <h1 class="title">Midwest</h1>
     {% for state in states %}
         {% if state.region == "Midwest" %}
-            <a href=""><ul>{{state.name}}</ul></a>
+            <a href="{% url 'region_state_detail' state.pk %}"><ul>{{state.name}}</ul></a>
         {% endif %}
     {% endfor %}
 </div>
@@ -34,7 +34,7 @@
     <h1 class="title">Southwest</h1>
     {% for state in states %}
         {% if state.region == "Southwest" %}
-            <a href=""><ul>{{state.name}}</ul></a>
+            <a href="{% url 'region_state_detail' state.pk %}"><ul>{{state.name}}</ul></a>
         {% endif %}
     {% endfor %}
 </div>
@@ -43,7 +43,7 @@
     <h1 class="title">West</h1>
     {% for state in states %}
         {% if state.region == "West" %}
-            <a href=""><ul>{{state.name}}</ul></a>
+            <a href="{% url 'region_state_detail' state.pk %}"><ul>{{state.name}}</ul></a>
         {% endif %}
     {% endfor %}
 </div>

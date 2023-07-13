@@ -1,7 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="detail__region">
-    <h1 class="title">{{state.region}}</h1>
+    <h1 class="title">{{state.name}}</h1>
+    <div class="state-school">
+
+        <h1>Small:</h1>
+        {% for school in state.schools.all %}
+            {% if school.size < 5000 %}
+            <a href=""><ul>{{school.name}}</ul></a>
+            {% endif %}
+        {% endfor %}
+        <br>
+
+        <h1>Medium:</h1>
+        {% for school in state.schools.all %}
+            {% if school.size >= 5000 and school.size < 15000 %}
+            <a href=""><ul>{{school.name}}</ul></a>
+            {% endif %}
+        {% endfor %}
+        <br>
+
+        <h1>Large:</h1>
+        {% for school in state.schools.all %}
+            {% if school.size >= 15000 %}
+            <a href=""><ul>{{school.name}}</ul></a>
+            {% endif %}
+        {% endfor %}
+    </div>
+    
 </div>
 
 {% endblock %}
