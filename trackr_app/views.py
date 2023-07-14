@@ -5,7 +5,7 @@ from .models import State, School
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from django.views.generic import DetailView
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, DeleteView
 
 # Create your views here.
 
@@ -50,4 +50,9 @@ class SchoolUpdate(UpdateView):
     model = School
     fields = ['name', 'city', 'size', 'public_private', 'research_class', 'img', 'notes', 'state']
     template_name = "school_update.html"
-    success_url = "/schools/<int:pk>"
+    success_url = "/schools/<int:pk>/"
+
+class SchoolDelete(DeleteView):
+    model = School
+    template_name = "school_delete_confirmation.html"
+    success_url = "/region-state/<int:pk>/"

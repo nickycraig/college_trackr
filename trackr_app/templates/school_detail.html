@@ -20,7 +20,7 @@
 </div>
 <div class="buttons">
     <a href="{% url 'school_update' school.pk %}" class="button is-info">Edit school</a>
-    <a href="" class="button is-danger">Delete school</a>
+    <a href="{% url 'school_delete' school.pk %}" class="button is-danger">Delete school</a>
 </div>
 
 

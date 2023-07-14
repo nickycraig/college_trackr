@@ -8,4 +8,5 @@ urlpatterns = [
     path('region-state/<int:pk>/schools/new/', views.SchoolCreate.as_view(), name="school_create"),
     path('schools/<int:pk>/', views.SchoolDetail.as_view(), name="school_detail"),
     path('schools/<int:pk>/update/', views.SchoolUpdate.as_view(), name="school_update"),
+    path('schools/<int:pk>/delete', views.SchoolDelete.as_view(), name="school_delete"),
 ]
