@@ -80,7 +80,7 @@
                   name="notes"
                   class="textarea"
                   rows="3"
-                  placeholder="UPS is a small liberal arts colleg in the Pacific Northwest."
+                  placeholder="UPS is a small liberal arts college in the Pacific Northwest."
                 ></textarea>
               </label>
       
@@ -99,7 +99,7 @@
         <h1>Small:</h1>
             {% for school in state.schools.all %}
                 {% if school.size < 5000 %}
-                <a href=""><ul>{{school.name}}</ul></a>
+                <a href="{% url 'school_detail' school.pk %}"><ul>{{school.name}}</ul></a>
                 {% endif %}
             {% endfor %}
         </div>
@@ -109,7 +109,7 @@
         <h1>Medium:</h1>
             {% for school in state.schools.all %}
                 {% if school.size >= 5000 and school.size < 15000 %}
-                <a href=""><ul>{{school.name}}</ul></a>
+                <a href="{% url 'school_detail' school.pk %}"><ul>{{school.name}}</ul></a>
                 {% endif %}
             {% endfor %}
         </div>
@@ -119,7 +119,7 @@
             <h1>Large:</h1>
             {% for school in state.schools.all %}
                 {% if school.size >= 15000 %}
-                <a href=""><ul>{{school.name}}</ul></a>
+                <a href="{% url 'school_detail' school.pk %}"><ul>{{school.name}}</ul></a>
                 {% endif %}
             {% endfor %}
         </div>

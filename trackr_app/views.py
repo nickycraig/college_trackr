@@ -5,6 +5,7 @@ from .models import State, School
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from django.views.generic import DetailView
+from django.views.generic.edit import UpdateView
 
 # Create your views here.
 
@@ -44,3 +45,9 @@ class SchoolDetail(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
+    
+class SchoolUpdate(UpdateView):
+    model = School
+    fields = ['name', 'city', 'size', 'public_private', 'research_class', 'img', 'notes', 'state']
+    template_name = "school_update.html"
+    success_url = "/schools/<int:pk>"
