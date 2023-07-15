@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="detail__region">
-    <h1 class="title">{{state.name}}</h1>
+    <h1 class="title is-2">{{state.name}}</h1>
 
     <div class="tile is-ancestor">
         <div class="tile is-7 is-vertical is-parent">
@@ -9,7 +9,7 @@
                 <h1 class="title is-5">Small:</h1>
                     {% for school in state.schools.all %}
                         {% if school.size < 5000 %}
-                        <a href="{% url 'school_detail' school.pk %}"><ul>{{school.name}}</ul></a>
+                        <a href="{% url 'school_detail' school.pk %}"><ul class="subtitle">{{school.name}}</ul></a>
                         {% endif %}
                     {% endfor %}
             </div>
@@ -19,7 +19,7 @@
                 <h1 class="title is-5">Medium:</h1>
                     {% for school in state.schools.all %}
                         {% if school.size >= 5000 and school.size < 15000 %}
-                        <a href="{% url 'school_detail' school.pk %}"><ul>{{school.name}}</ul></a>
+                        <a href="{% url 'school_detail' school.pk %}"><ul class="subtitle">{{school.name}}</ul></a>
                         {% endif %}
                     {% endfor %}
             </div>
@@ -29,14 +29,14 @@
                 <h1 class="title is-5">Large:</h1>
                     {% for school in state.schools.all %}
                         {% if school.size >= 15000 %}
-                        <a href="{% url 'school_detail' school.pk %}"><ul>{{school.name}}</ul></a>
+                        <a href="{% url 'school_detail' school.pk %}"><ul class="subtitle">{{school.name}}</ul></a>
                         {% endif %}
                     {% endfor %}
             </div>
           </div> 
           <div class="tile is-5 is-parent">
             <div class="tile is-child box">
-                <form method="post" action="{% url 'school_create' state.pk %}" class="box p-5">
+                <form method="post" action="{% url 'school_create' state.pk %}" class="">
                     {% csrf_token %}
                     <label class="is-block mb-4">
                         <span class="is-block mb-2">School name</span>

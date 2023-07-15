@@ -5,7 +5,8 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css"> -->
+        <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/lux/bulmaswatch.min.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
         <script src="{% static 'scripts/main.js' %}" defer></script>
@@ -14,7 +15,7 @@
     <body>
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-              <a class="navbar-item" href="/">CollegeTrackr</a>
+              <a class="navbar-item is-size-4" href="/">CollegeTrackr</a>
           
               <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                 <span aria-hidden="true"></span>
@@ -25,30 +26,31 @@
             <div id="navbarBasicExample" class="navbar-menu">
               <div class="navbar-start">
                 <a class="navbar-item" href="/">Home</a>
+                <a class="navbar-item" href="/region-state">Regions</a>
                 <div class="navbar-item has-dropdown is-hoverable">
-                  <a class="navbar-link" href="/region-state">Regions</a> 
+                  <a class="navbar-link" href="">Top Lists</a> 
                   <div class="navbar-dropdown">
                     <a class="navbar-item">
-                      Northeast
+                      R1 Institutions
                     </a>
                     <a class="navbar-item">
-                      Southeast
+                      R2 Institutions
                     </a>
                     <a class="navbar-item">
-                      Midwest
+                      AAUs
                     </a>
                     <a class="navbar-item">
-                      Southwest
+                      Academic Medical Centers
                     </a>
                     <a class="navbar-item">
-                      West
+                      Top Liberal Arts Colleges
                     </a>
                   </div>
                 </div>
               </div>
               <div class="navbar-end">
                 <a class="navbar-item">
-                  Top Lists
+                  
                 </a>
               </div>
             </div>
