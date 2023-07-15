@@ -1,5 +1,8 @@
+from typing import Any, Optional
+from django.db import models
 from django.shortcuts import render
 from django.shortcuts import redirect
+from django.urls import reverse
 from django.views import View
 from .models import State, School
 from django.http import HttpResponse
@@ -50,9 +53,10 @@ class SchoolUpdate(UpdateView):
     model = School
     fields = ['name', 'city', 'size', 'public_private', 'research_class', 'img', 'notes', 'state']
     template_name = "school_update.html"
-    success_url = "/schools/<int:pk>/"
+    def get_success_url(self, *args, **kwargs):
+        return reverse("school_detail", kwargs={"pk":self.object.pk})
 
 class SchoolDelete(DeleteView):
     model = School
     template_name = "school_delete_confirmation.html"
-    success_url = "/region-state/<int:pk>/"
+    success_url = "/schools/"
