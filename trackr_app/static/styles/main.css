@@ -2,3 +2,8 @@
     background-image: url("https://www.mappr.co/wp-content/uploads/2023/01/us-regions-map.jpg");
     background-size: contain; 
 }
+
+.tile-container, .detail__region {
+    margin-left: 10px;
+    margin-right: 10px;
+}
