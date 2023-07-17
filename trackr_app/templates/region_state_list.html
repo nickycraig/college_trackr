@@ -3,9 +3,9 @@
 <div class="tile-container">
     <h1 class="title is-2">US Regions</h1>
 
-    <div class="tile is-ancestor is-transparent">
+    <div class="tile is-ancestor">
         <div class="tile is-parent is-3">
-            <article class="tile is-child box">
+            <article class="tile is-child box is-warning">
                 <h1 class="title is-3">West</h1>
                     {% for state in states %}
                         {% if state.region == "West" %}
