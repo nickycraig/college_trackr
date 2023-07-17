@@ -5,7 +5,7 @@
 
     <div class="tile is-ancestor">
         <div class="tile is-parent is-3">
-            <article class="tile is-child box is-warning">
+            <article class="tile is-child box notification is-danger">
                 <h1 class="title is-3">West</h1>
                     {% for state in states %}
                         {% if state.region == "West" %}
@@ -15,7 +15,7 @@
             </article>
         </div>
         <div class="tile is-4 is-vertical is-parent">
-            <article class="tile is-child box">
+            <article class="tile is-child box notifications is">
                 <h1 class="title is-3">Midwest</h1>
                     {% for state in states %}
                         {% if state.region == "Midwest" %}
@@ -23,7 +23,7 @@
                         {% endif %}
                     {% endfor %}
             </article>
-            <article class="tile is-child box">
+            <article class="tile is-child box notifcation is-warning">
                 <h1 class="title is-3">Southwest</h1>
                     {% for state in states %}
                         {% if state.region == "Southwest" %}
@@ -41,7 +41,7 @@
                         {% endif %}
                     {% endfor %}
             </article>
-            <article class="tile is-child box">
+            <article class="tile is-child box notification is-warning is-dark">
                 <h1 class="title is-3">Southeast</h1>
                     {% for state in states %}
                         {% if state.region == "Southeast" %}
