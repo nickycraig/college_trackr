@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="school__img">
-    <img src="{{school.img}}" alt="{{school.name}}" />
+    <figure class="image is-5by3">
+        <img src="{{school.img}}" alt="{{school.name}}" />
+    </figure>   
 </div>
 <div class="school_name">
     <h1 class="title is-2">{{school.name}}</h1>
@@ -14,7 +16,7 @@
     <span>current enrollment: {{school.size}}</span>
     <span>research classification: {{school.research_class}} </span>
 </div>
-<div class="info">
+<div class="tile">
     <h1 class="is-size-3">Additional notes</h1>
     <p>{{school.notes}}</p>
 </div>
