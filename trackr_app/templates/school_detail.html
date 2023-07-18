@@ -11,16 +11,17 @@
 <div class="city_name">
     <h1 class="is-size-5">{{school.city}}, {{school.state}}</h1>
 </div>
+<br>
 <div class="tile is-ancestor">
-    <div class="tile is-4 box">
-        <p class="is-size-5">{{school.public_private}} institution</p>
-        <p class="is-size-5">current enrollment: {{school.size}}</p>
-        <p class="is size-5">research classification: {{school.research_class}} </p>
-    </div>
-    <div class="tile box">
-        <h1 class="is-size-3">Additional notes</h1>
-        <p class="is-size-5">{{school.notes}}</p>
-    </div>
+    <article class="tile is-4 box">
+        <h3 class="is-size-5">{{school.public_private}} institution</h3>
+        <h3 class="is-size-5">current enrollment: {{school.size}}</h3>
+        <h3 class="is size-5">research classification: {{school.research_class}} </h3>
+    </article>
+    <article class="tile box">
+        <h1 class="is-size-3">Additional notes:</h1>
+        <h3 class="is-size-5">{{school.notes}}</h3>
+    </article>
 </div>
 <div class="buttons">
     <a href="{% url 'school_update' school.pk %}" class="button is-info">Edit school</a>
