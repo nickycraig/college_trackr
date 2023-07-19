@@ -5,30 +5,33 @@
         <img src="{{school.img}}" alt="{{school.name}}" />
     </figure>   
 </div>
-<div class="school_name">
-    <h1 class="title is-2">{{school.name}}</h1>
+<div class="tile-container">
+    <div class="school_name">
+        <h1 class="title is-2">{{school.name}}</h1>
+    </div>
+    <div class="city_name">
+        <h1 class="is-size-5">{{school.city}}, {{school.state}}</h1>
+    </div>
+    <br>
+    <div class="tile is-ancestor">
+        <article class="tile is-4 box">
+            <h1 class="is-size-3">Stats:</h1>
+            <ul>
+                <li class="is-size-5">{{school.public_private}} institution</li>
+                <li class="is-size-5">current enrollment: {{school.size}}</li>
+                <li class="is size-5">research classification: {{school.research_class}} </li>
+            </ul>    
+        </article>
+        <article class="tile box">
+            <h1 class="is-size-3">Additional notes:</h1>
+            <p class="is-size-5">{{school.notes}}</p>
+        </article>
+    </div>
+    <div class="buttons">
+        <a href="{% url 'school_update' school.pk %}" class="button is-info">Edit school</a>
+        <a href="{% url 'school_delete' school.pk %}" class="button is-danger">Delete school</a>
+    </div>
 </div>
-<div class="city_name">
-    <h1 class="is-size-5">{{school.city}}, {{school.state}}</h1>
-</div>
-<br>
-<div class="tile is-ancestor">
-    <article class="tile is-4 box">
-        <h3 class="is-size-5">{{school.public_private}} institution</h3>
-        <h3 class="is-size-5">current enrollment: {{school.size}}</h3>
-        <h3 class="is size-5">research classification: {{school.research_class}} </h3>
-    </article>
-    <article class="tile box">
-        <h1 class="is-size-3">Additional notes:</h1>
-        <h3 class="is-size-5">{{school.notes}}</h3>
-    </article>
-</div>
-<div class="buttons">
-    <a href="{% url 'school_update' school.pk %}" class="button is-info">Edit school</a>
-    <a href="{% url 'school_delete' school.pk %}" class="button is-danger">Delete school</a>
-</div>
-
-
 
 
 {% endblock %}
