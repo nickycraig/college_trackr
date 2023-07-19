@@ -14,18 +14,24 @@
     </div>
     <br>
     <div class="tile is-ancestor">
-        <article class="tile is-4 box">
-            <h1 class="is-size-3">Stats:</h1>
-            <ul>
-                <li class="is-size-5">{{school.public_private}} institution</li>
-                <li class="is-size-5">current enrollment: {{school.size}}</li>
-                <li class="is size-5">research classification: {{school.research_class}} </li>
-            </ul>    
-        </article>
-        <article class="tile box">
-            <h1 class="is-size-3">Additional notes:</h1>
-            <p class="is-size-5">{{school.notes}}</p>
-        </article>
+        <div class="tile is-vertical is-8">
+            <div class="tile">
+                <div class="tile is-parent">
+                    <article class="tile is-child is-4 box">
+                        <p class="title">Stats:</h1>
+                        <p class="subtitle">{{school.public_private}} institution</p>
+                        <p class="subtitle">current enrollment: {{school.size}}</p>
+                        <p class="subtitle">research classification: {{school.research_class}} </p>  
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <p class="title">Additional notes:</p>
+                        <p class="subtitle">{{school.notes}}</p>
+                    </article>
+                </div>
+            </div>
+        </div>   
     </div>
     <div class="buttons">
         <a href="{% url 'school_update' school.pk %}" class="button is-info">Edit school</a>
