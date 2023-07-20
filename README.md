@@ -21,7 +21,7 @@ Wireframe:
 
 ## Technologies Used
 
-Python, Django, HTML, Bulma CSS, JQuery
+Python, Django, PostgreSQL, HTML, Bulma CSS, JQuery
 
 ## Getting Started
 
